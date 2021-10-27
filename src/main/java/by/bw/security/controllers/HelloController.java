@@ -7,8 +7,13 @@ import java.util.Map;
 
 @Controller
 public class HelloController {
-//    @GetMapping("/")
-//    public String hello(Map<String, Object> model) {
-//        return "hello";
-//    }
+    @GetMapping("/test")
+    public String hello(Map<String, Object> model) {
+        return "test";
+    }
+
+    @GetMapping("/")
+    public String home(Map<String, Object> model) {
+        return "home";
+    }
 }
