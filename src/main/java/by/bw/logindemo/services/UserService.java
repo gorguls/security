@@ -1,6 +1,5 @@
 package by.bw.logindemo.services;
 
-import by.bw.logindemo.DAO.authority.User;
 import by.bw.logindemo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,8 +14,8 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        User u = userRepository.findByUsername(userName);
-        System.out.println(u.toString());
+//        User u = userRepository.findByUsername(userName);
+//        System.out.println(u.toString());
         return userRepository.findByUsername(userName);
     }
 }
