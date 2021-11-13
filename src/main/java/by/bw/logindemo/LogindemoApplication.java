@@ -1,12 +1,13 @@
-package by.bw.security;
+package by.bw.logindemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SecurityApplication {
+public class LogindemoApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(SecurityApplication.class, args);
+		SpringApplication.run(LogindemoApplication.class, args);
 	}
 
 }
