@@ -9,14 +9,17 @@ import java.util.Map;
 
 @Controller
 public class MainController {
+
     @GetMapping("/")
     public String HomePage(Map<String, Object> model){
         return "homepage";
     }
+
     @GetMapping("/information")
     public String inform(@AuthenticationPrincipal User user,
                          Map<String, Object> model){
         model.put("message", "Здравствуйте, " + user.getUsername() + ", вы прошли авторизацию!");
+        model.put("username", user.getUsername());
         return "information";
     }
 }

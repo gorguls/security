@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+<form action="/logout" method="post">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    <lable>Вы вошли как {{username}} <input type="submit" value="Logout"></lable>
+</form>
  {{#message}}
      {{message}}
  {{/message}}
