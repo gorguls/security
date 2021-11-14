@@ -17,6 +17,8 @@ public class User implements UserDetails {
     private String username;
     private String password;
     private boolean active;
+    private String name;
+    private String surname;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
@@ -26,12 +28,33 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String password, boolean active, Set<Role> role) {
+    public User(String username, String password, boolean active, String name, String surname, Set<Role> role) {
+        this.username = username;
         this.password = password;
         this.active = active;
+        this.name = name;
+        this.surname = surname;
         this.role = role;
     }
+
 // Геттеры и сеттеры
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
     @Override
     public String getUsername() {
         return username;

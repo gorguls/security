@@ -18,7 +18,8 @@ public class MainController {
     @GetMapping("/information")
     public String inform(@AuthenticationPrincipal User user,
                          Map<String, Object> model){
-        model.put("message", "Здравствуйте, " + user.getUsername() + ", вы прошли авторизацию!");
+
+        model.put("message", "Здравствуйте, " + user.getName() + " " + user.getSurname() + ", вы прошли авторизацию!");
         model.put("username", user.getUsername());
         return "information";
     }

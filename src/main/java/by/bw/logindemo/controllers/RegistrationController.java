@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Collections;
 import java.util.Map;
@@ -22,7 +23,11 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(User user, Map<String, Object> model) {
+    public String addUser(
+                     @RequestParam String name
+                    ,@RequestParam String surname
+                    , User user
+                    , Map<String, Object> model) {
         User userFromDB = userRepository.findByUsername(user.getUsername());
         if (userFromDB != null) {
             model.put("message", "Пользователь уже существует");
@@ -30,6 +35,8 @@ public class RegistrationController {
         }
         user.setActive(true);
         user.setRole(Collections.singleton(Role.USER));
+        user.setName(name);
+        user.setSurname(surname);
         userRepository.save(user);
         return "redirect:/login";
     }
