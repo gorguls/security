@@ -1,5 +1,6 @@
 <#import "tpl/mainpage.ftlh" as mp>
+<#import "tpl/menu.ftlh" as menu>
 <@mp.page>
- <div>Start page</div>
- <a href="/information">Нужная информация</a>
+ <@menu.menu></@menu.menu>
+ <div>Главная страница</div>
 </@mp.page>

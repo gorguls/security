@@ -1,8 +1,6 @@
 <#import "tpl/mainpage.ftlh" as mp>
+<#import "tpl/menu.ftlh" as menu>
 <@mp.page>
-<form action="/logout" method="post">
-    <input type="hidden" name="_csrf" value="${_csrf.token}" />
-    <lable>Вы вошли как ${username!} <input type="submit" value="Logout"></lable>
-</form>
+    <@menu.menu></@menu.menu>
     ${userinfo!}
 </@mp.page>

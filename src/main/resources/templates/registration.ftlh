@@ -1,6 +1,6 @@
 <#import "tpl/mainpage.ftlh" as mp>
 <@mp.page>
-Add new user
+Добавить пользователя
 ${message!}
 <form action="/registration" method="post">
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
