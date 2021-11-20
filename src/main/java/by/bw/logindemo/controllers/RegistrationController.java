@@ -5,6 +5,7 @@ import by.bw.logindemo.DAO.authority.User;
 import by.bw.logindemo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,10 +28,10 @@ public class RegistrationController {
                      @RequestParam String name
                     ,@RequestParam String surname
                     , User user
-                    , Map<String, Object> model) {
+                    , Model model) {
         User userFromDB = userRepository.findByUsername(user.getUsername());
         if (userFromDB != null) {
-            model.put("message", "Пользователь уже существует");
+            model.addAttribute("message", "Пользователь уже существует");
             return "registration";
         }
         user.setActive(true);
