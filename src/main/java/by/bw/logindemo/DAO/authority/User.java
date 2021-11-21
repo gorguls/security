@@ -96,7 +96,7 @@ public class User implements UserDetails {
     // применение UserDetails Важно переправить ретурны на TRUE
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return getRole();
     }
 
     @Override
