@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Set;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,7 +24,8 @@ public class User implements UserDetails {
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> role;
-// Конструкторы
+
+    // Конструкторы
     public User() {
     }
 
@@ -37,7 +38,10 @@ public class User implements UserDetails {
         this.role = role;
     }
 
-// Геттеры и сеттеры
+    // Геттеры и сеттеры
+    public long getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -89,7 +93,7 @@ public class User implements UserDetails {
         this.role = role;
     }
 
-// применение UserDetails Важно переправить рtтурны на TRUE
+    // применение UserDetails Важно переправить ретурны на TRUE
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
