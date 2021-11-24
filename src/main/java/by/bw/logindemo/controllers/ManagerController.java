@@ -37,12 +37,12 @@ public class ManagerController {
     }
 
     @PostMapping
-    public String userSave(@RequestParam("userId") User user,
-                           @RequestParam Map<String, String> form,
-                           @RequestParam String username,
-                           @RequestParam String userpassword,
-                           @RequestParam String name,
-                           @RequestParam String surname
+    public String userSave(@RequestParam("userId") User user
+                           ,@RequestParam Map<String, String> form
+                           ,@RequestParam String username
+                           ,@RequestParam String userpassword
+                           ,@RequestParam String name
+                           ,@RequestParam String surname
                            ) {
         System.out.println(form.toString());
         user.setUsername(username);
