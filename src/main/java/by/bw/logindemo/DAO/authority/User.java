@@ -25,6 +25,8 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> role;
 
+    private boolean isAdmin;
+
     // Конструкторы
     public User() {
     }
@@ -57,6 +59,10 @@ public class User implements UserDetails {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public boolean isAdmin() {
+        return role.contains(Role.ADMIN);
     }
 
     @Override

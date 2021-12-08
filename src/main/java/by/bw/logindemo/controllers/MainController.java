@@ -10,18 +10,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("/")
-    public String HomePage(@AuthenticationPrincipal User user, Model model) {
-        if (user != null) {
-            model.addAttribute("username", user.getUsername());
-        }
+    public String HomePage( Model model ) {
         return "homepage";
     }
 
     @GetMapping("/information")
-    public String inform(@AuthenticationPrincipal User user,
-                         Model model) {
+    public String inform(@AuthenticationPrincipal User user, Model model) {
+
         model.addAttribute("userinfo", "Здравствуйте, " + user.getName() + " " + user.getSurname() + ", вы прошли авторизацию!");
-        model.addAttribute("username", user.getUsername());
+
         return "information";
     }
 }

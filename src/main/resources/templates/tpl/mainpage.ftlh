@@ -1,3 +1,4 @@
+<#-- <#include "autorisInfo.ftlh"> -->
 <#macro page>
     <!DOCTYPE html>
     <html lang="en">
