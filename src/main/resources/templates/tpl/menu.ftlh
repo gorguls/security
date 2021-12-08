@@ -9,6 +9,7 @@
         <div class="logout">
             <form action="/logout" method="post">
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                <!-- username берётся из autorisInfo.ftlh-->
                 <lable>Вы вошли как ${username} <input type="submit" value="Logout"></lable>
             </form>
         </div>
