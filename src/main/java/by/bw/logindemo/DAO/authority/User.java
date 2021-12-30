@@ -25,8 +25,6 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> role;
 
-    private boolean isAdmin;
-
     // Конструкторы
     public User() {
     }

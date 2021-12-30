@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
     @GetMapping("/")
-    public String HomePage( Model model ) {
+    public String HomePage(Model model) {
         return "homepage";
     }
 
